@@ -1,0 +1,26 @@
+// ========================================================================================================================================================
+// Button
+.button {
+	gap: toRem(10);
+	font-weight: 500;
+	padding: 0px 20px;
+	border-radius: 5px;
+	align-items: center;
+	display: inline-flex;
+	min-height: toRem(42);
+	justify-content: center;
+	flex-direction: row-reverse;
+	background: linear-gradient(91deg, #2563eb 0%, #d946ef 100%);
+	&::before {
+		font-size: toRem(20);
+	}
+	@media (any-hover: hover) {
+		&:hover {
+			background: linear-gradient(-91deg, #2563eb 0%, #d946ef 100%);
+		}
+	}
+	&--fw {
+		width: 100%;
+	}
+}
+// ========================================================================================================================================================

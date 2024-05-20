@@ -1,0 +1,66 @@
+//========================================================================================================================================================
+// Заголовки, загальні БЕМ блоки та інше...
+//========================================================================================================================================================
+::-webkit-scrollbar {
+	width: toRem(1);
+	border-radius: toRem(10);
+	background-color: $bgColor;
+}
+::-webkit-scrollbar-thumb {
+	border-radius: toRem(10);
+	background-color: orange;
+}
+::selection {
+	background-color: rgba(#a60101, 0.5);
+}
+//========================================================================================================================================================
+// Label & Title & Text
+.label {
+	font-weight: 600;
+	display: inline-flex;
+	border-radius: toRem(3);
+	padding: toRem(5) toRem(10);
+	font-family: $fontFamilySecondary;
+	background-color: rgba(#3f6fd0, 0.7);
+	@include adaptiveValue("font-size", 18, 16);
+}
+.title {
+	font-weight: 600;
+	line-height: 130%;
+	font-family: $fontFamilySecondary;
+	background: linear-gradient(90deg, #fff 0%, #6a67e1 100%);
+	background-clip: text;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	@include adaptiveValue("font-size", 48, 28);
+}
+.text {
+	line-height: 162%;
+	color: rgba($mainColor, 0.75);
+	@include adaptiveValue("font-size", 16, 14);
+}
+//========================================================================================================================================================
+// Heading
+.heading {
+	margin: 0 auto;
+	&--center {
+		text-align: center;
+		max-width: toRem(650);
+	}
+
+	&__label {
+		&:not(:last-child) {
+			@include adaptiveValue("margin-bottom", 15, 10);
+		}
+	}
+
+	&__title {
+		&:not(:last-child) {
+			@include adaptiveValue("margin-bottom", 20, 15);
+		}
+	}
+
+	&__text {
+	}
+}
+//========================================================================================================================================================
