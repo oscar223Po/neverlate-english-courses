@@ -50,7 +50,9 @@
 		text-align: center;
 		max-width: toRem(650);
 	}
-
+	&--right {
+		text-align: right;
+	}
 	&__label {
 		&:not(:last-child) {
 			@include adaptiveValue("margin-bottom", 15, 10);
@@ -59,7 +61,7 @@
 
 	&__title {
 		&:not(:last-child) {
-			@include adaptiveValue("margin-bottom", 20, 15);
+			@include adaptiveValue("margin-bottom", 15, 10);
 		}
 	}
 

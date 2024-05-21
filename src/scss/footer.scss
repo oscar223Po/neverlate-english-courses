@@ -3,7 +3,7 @@
 .footer {
 	padding-top: toRem(20);
 	background-color: #17233d;
-	@include adaptiveValue("margin-top", 60, 30);
+	@include adaptiveValue("margin-top", 100, 40);
 	border-top: toRem(1) solid rgba(#969696, 0.3);
 	&__container {
 	}
