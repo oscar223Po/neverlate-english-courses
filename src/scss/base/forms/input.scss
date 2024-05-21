@@ -1,3 +1,4 @@
+// ========================================================================================================================================================
 //<INPUT>
 // Сніппет (HTML): inp
 input[type="text"],
@@ -7,14 +8,19 @@ textarea {
 	-webkit-appearance: none;
 	-moz-appearance: none;
 	appearance: none;
+	outline: none;
 }
 .input {
-	border-radius: 0 !important;
 	width: 100%;
 	display: block;
-	padding: 0px 20px;
-	border: 1px solid #eee;
+	padding: 0px 10px;
+	border-radius: 5px;
+	min-height: toRem(40);
+	border: 1px solid rgba(#d946ef, 0.5);
 	caret-color: inherit;
+	&::placeholder {
+		color: rgba($mainColor, 0.7);
+	}
 	&._form-focus {
 	}
 	&._form-error {
@@ -24,6 +30,9 @@ textarea {
 	&::placeholder {
 		transition: opacity 0.3s;
 	}
+	&:focus {
+		border: 1px solid rgba(#d946ef, 1);
+	}
 	&:focus::placeholder {
 		opacity: 0;
 	}
@@ -31,5 +40,7 @@ textarea {
 
 textarea.input {
 	resize: none;
-	padding: 0px 0px;
+	padding: 10px;
+	min-height: toRem(80);
 }
+// ========================================================================================================================================================

@@ -330,8 +330,10 @@ body {
 .learn {
 	@include adaptiveValue("padding-top", 80, 40);
 	&__main {
-		padding-bottom: toRem(40);
 		@include adaptiveValue("padding-top", 50, 30);
+		@include adaptiveValue("padding-bottom", 60, 40);
+		border-top: toRem(1) solid rgba($mainColor, 0.25);
+		border-bottom: toRem(1) solid rgba($mainColor, 0.25);
 		background: url("@img/backgrounds/learn-bg.jpg") center bottom / cover no-repeat;
 	}
 
@@ -358,21 +360,10 @@ body {
 }
 .block-learn {
 	&__title {
-		display: flex;
-		color: #f1cb00;
-		gap: toRem(10);
 		font-weight: 700;
-		align-items: center;
-		justify-content: center;
+		color: $mainColor;
+		text-align: center;
 		@include adaptiveValue("font-size", 30, 20);
-		&::before,
-		&::after {
-			content: "";
-			width: toRem(20);
-			height: toRem(2);
-			border-radius: toRem(10);
-			background-color: rgba(#f1cb00, 0.5);
-		}
 		&:not(:last-child) {
 			margin-bottom: toRem(20);
 		}
@@ -389,9 +380,9 @@ body {
 	&__item {
 		border-radius: toRem(15);
 		padding: toRem(20) toRem(15);
-		border: toRem(1) solid #f1cb00;
 		background-color: rgba(0, 0, 0, 0.45);
-		box-shadow: toRem(0) toRem(0) toRem(10) toRem(1) rgba(241, 203, 0, 0.36);
+		border: toRem(1) solid rgba(#335fbf, 0.85);
+		box-shadow: toRem(0) toRem(0) toRem(10) toRem(1) rgba(241, 203, 0, 0.25);
 		@media (max-width: toEm(689.98)) {
 			border-radius: toRem(10);
 			padding: toRem(15) toRem(10);
@@ -413,12 +404,56 @@ body {
 	}
 
 	&__list-item {
+		display: flex;
+		gap: toRem(7);
 		font-weight: 500;
+		align-items: center;
 		@include adaptiveValue("font-size", 20, 16);
 		span {
-			color: #b78702;
+			display: flex;
+			color: $mainColor;
+			// color: #b78702;
 			font-weight: 700;
+			border-radius: toRem(5);
+			background-color: #2563eb;
+			padding: toRem(3) toRem(5);
 		}
+	}
+}
+// ========================================================================================================================================================
+// Request
+.request {
+	@include adaptiveValue("padding-top", 80, 40);
+	&__container {
+		display: grid;
+		gap: toRem(25);
+		grid-template-columns: repeat(2, 1fr);
+		@media (max-width: $tablet) {
+			grid-template-columns: auto;
+		}
+	}
+
+	&__heading {
+	}
+
+	&__body {
+		border-radius: toRem(25);
+		border: toRem(1) solid rgba($mainColor, 0.15);
+		box-shadow: 0 22px 18px 0 rgba(0, 0, 0, 0.05);
+		padding: toRem(20) toRem(15) toRem(25) toRem(15);
+		background: linear-gradient(268deg, rgba(254, 254, 255, 0.05) 0%, rgba(255, 255, 255, 0.05) 100%);
+		@media (max-width: $mobileSmall) {
+			border-radius: toRem(15);
+		}
+	}
+
+	&__title {
+		&:not(:last-child) {
+			margin-bottom: toRem(15);
+		}
+	}
+
+	&__form {
 	}
 }
 // ========================================================================================================================================================

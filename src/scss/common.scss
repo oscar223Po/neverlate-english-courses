@@ -33,6 +33,9 @@
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 	@include adaptiveValue("font-size", 48, 28);
+	&--min {
+		@include adaptiveValue("font-size", 30, 20);
+	}
 }
 .text {
 	line-height: 162%;

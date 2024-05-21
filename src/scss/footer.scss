@@ -1,7 +1,10 @@
 //========================================================================================================================================================
 // Footer
 .footer {
-	margin-top: toRem(25);
+	padding-top: toRem(20);
+	background-color: #17233d;
+	@include adaptiveValue("margin-top", 60, 30);
+	border-top: toRem(1) solid rgba(#969696, 0.3);
 	&__container {
 	}
 
@@ -15,7 +18,7 @@
 	display: flex;
 	gap: toRem(20);
 	align-items: center;
-	padding-bottom: toRem(25);
+	padding-bottom: toRem(20);
 	justify-content: space-between;
 	border-bottom: toRem(1) solid rgba(#969696, 0.3);
 	@media (max-width: toEm(589.98)) {
