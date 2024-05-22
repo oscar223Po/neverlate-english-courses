@@ -707,7 +707,7 @@ textarea.input {
   position: absolute
 }
 .slide-learn--01::before {
-  background: url(../img/learn/01.webp) center/cover no-repeat
+  background: url(../img/learn/07.webp) center/cover no-repeat
 }
 .slide-learn--02::before {
   background: url(../img/learn/02.webp) center/cover no-repeat
@@ -725,7 +725,7 @@ textarea.input {
   background: url(../img/learn/06.webp) center/cover no-repeat
 }
 .slide-learn--07::before {
-  background: url(../img/learn/07.webp) center/cover no-repeat
+  background: url(../img/learn/01.webp) center/cover no-repeat
 }
 .slide-learn__body {
   height: 100%;
