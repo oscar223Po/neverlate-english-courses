@@ -781,6 +781,19 @@ textarea.input {
   padding: .1875rem .3125rem;
   background-color: rgba(37,99,235,.7)
 }
+.quest__body {
+  display: grid
+}
+.item-quest {
+  border-radius: .625rem;
+  padding: 1.25rem .9375rem;
+  background-color: rgba(0,0,0,.25);
+  border: .0625rem solid rgba(51,95,191,.85);
+  box-shadow: 0 0 .625rem .0625rem rgba(241,203,0,.25)
+}
+.item-quest__title:not(:last-child) {
+  margin-bottom: .625rem
+}
 .request__container {
   display: grid;
   gap: 1.5625rem;
@@ -999,6 +1012,15 @@ textarea.input {
   .slide-learn__label {
     font-size: 1.125rem
   }
+  .quest {
+    padding-top: 5rem
+  }
+  .quest__heading:not(:last-child) {
+    margin-bottom: 3.125rem
+  }
+  .quest__body {
+    gap: 1.875rem
+  }
   .request {
     padding-top: 6.25rem
   }
@@ -1096,6 +1118,15 @@ textarea.input {
   }
   .slide-learn__label {
     font-size: 1rem
+  }
+  .quest {
+    padding-top: 2.5rem
+  }
+  .quest__heading:not(:last-child) {
+    margin-bottom: 1.5625rem
+  }
+  .quest__body {
+    gap: .9375rem
   }
   .request {
     padding-top: 2.5rem
@@ -1365,6 +1396,9 @@ textarea.input {
   .item-about__content {
     gap: .625rem
   }
+  .item-quest {
+    padding: .9375rem
+  }
   .request__body {
     border-radius: .9375rem
   }
@@ -1604,6 +1638,36 @@ textarea.input {
   @supports not (font-size:clamp(1rem ,0.9545454545rem + 0.2272727273vw ,1.125rem)) {
     .slide-learn__label {
       font-size: calc(1rem + .125 * (100vw - 20rem)/ 55)
+    }
+  }
+  @supports (padding-top:clamp(2.5rem ,1.5909090909rem + 4.5454545455vw ,5rem)) {
+    .quest {
+      padding-top: clamp(2.5rem ,1.5909090909rem + 4.5454545455vw ,5rem)
+    }
+  }
+  @supports not (padding-top:clamp(2.5rem ,1.5909090909rem + 4.5454545455vw ,5rem)) {
+    .quest {
+      padding-top: calc(2.5rem + 2.5 * (100vw - 20rem)/ 55)
+    }
+  }
+  @supports (margin-bottom:clamp(1.5625rem ,0.9943181818rem + 2.8409090909vw ,3.125rem)) {
+    .quest__heading:not(:last-child) {
+      margin-bottom: clamp(1.5625rem ,.9943181818rem + 2.8409090909vw ,3.125rem)
+    }
+  }
+  @supports not (margin-bottom:clamp(1.5625rem ,0.9943181818rem + 2.8409090909vw ,3.125rem)) {
+    .quest__heading:not(:last-child) {
+      margin-bottom: calc(1.5625rem + 1.5625 * (100vw - 20rem)/ 55)
+    }
+  }
+  @supports (gap:clamp(0.9375rem ,0.5965909091rem + 1.7045454545vw ,1.875rem)) {
+    .quest__body {
+      gap: clamp(.9375rem ,.5965909091rem + 1.7045454545vw ,1.875rem)
+    }
+  }
+  @supports not (gap:clamp(0.9375rem ,0.5965909091rem + 1.7045454545vw ,1.875rem)) {
+    .quest__body {
+      gap: calc(.9375rem + .9375 * (100vw - 20rem)/ 55)
     }
   }
   @supports (padding-top:clamp(2.5rem ,1.1363636364rem + 6.8181818182vw ,6.25rem)) {

@@ -535,6 +535,45 @@ body {
 	}
 }
 // ========================================================================================================================================================
+// Quest
+.quest {
+	@include adaptiveValue("padding-top", 80, 40);
+	&__container {
+	}
+
+	&__heading {
+		&:not(:last-child) {
+			@include adaptiveValue("margin-bottom", 50, 25);
+		}
+	}
+
+	&__body {
+		display: grid;
+		@include adaptiveValue("gap", 30, 15);
+	}
+
+	&__item {
+	}
+}
+.item-quest {
+	border-radius: toRem(10);
+	padding: toRem(20) toRem(15);
+	background-color: rgba(0, 0, 0, 0.25);
+	border: toRem(1) solid rgba(#335fbf, 0.85);
+	box-shadow: toRem(0) toRem(0) toRem(10) toRem(1) rgba(241, 203, 0, 0.25);
+	@media (max-width: $mobileSmall) {
+		padding: toRem(15);
+	}
+	&__title {
+		&:not(:last-child) {
+			margin-bottom: toRem(10);
+		}
+	}
+
+	&__text {
+	}
+}
+// ========================================================================================================================================================
 // Request
 .request {
 	@include adaptiveValue("padding-top", 100, 40);
