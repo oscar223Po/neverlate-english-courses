@@ -100,7 +100,7 @@
 
 	&__socials {
 		display: flex;
-		gap: toRem(15);
+		gap: toRem(10);
 		align-items: center;
 	}
 
@@ -111,13 +111,20 @@
 		border-radius: 50%;
 		align-items: center;
 		justify-content: center;
-		transition: color 0.3s ease 0s;
-		color: rgba(255, 255, 255, 0.8);
 		background-color: rgba(#1c2c50, 0.35);
+		transition: background-color 0.3s ease 0s;
 		border: toRem(1) solid rgba($mainColor, 0.15);
+		svg {
+			width: toRem(14);
+			height: toRem(14);
+			transition: opacity 0.3s ease 0s;
+		}
 		@media (any-hover: hover) {
 			&:hover {
-				color: rgba(255, 255, 255, 1);
+				background-color: rgba(#1c2c50, 0.7);
+				svg {
+					opacity: 0.75;
+				}
 			}
 		}
 	}

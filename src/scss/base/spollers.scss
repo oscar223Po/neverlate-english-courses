@@ -1,6 +1,5 @@
-// Базові стилі спойлерів
+// ========================================================================================================================================================
 // Сніппет (HTML): spoller
-
 // Блок зі спойлерами
 .spollers {
 	display: grid;
@@ -8,18 +7,19 @@
 }
 // Спойлер
 .spollers__item {
-	font-size: toRem(20);
+	@include adaptiveValue("font-size", 18, 16);
 }
 // Заголовок спойлера
 .spollers__title {
 	width: 100%;
 	cursor: default;
 	text-align: left;
-	border: 1px solid #eee;
-	padding: toRem(10) toRem(15);
+	border: 1px solid rgba(#eee, 0.5);
+	padding: toRem(10) toRem(45) toRem(10) toRem(15);
 	border-radius: toRem(5);
 	position: relative;
 	list-style: none;
+	transition: border-radius 0.3s ease 0s;
 	&::marker,
 	&::-webkit-details-marker {
 		display: none;
@@ -32,7 +32,7 @@
 			position: absolute;
 			right: 10px;
 			top: 50%;
-			background-color: #000;
+			background-color: $mainColor;
 			height: 2px;
 			width: 15px;
 			transition: transform 0.5s ease 0s;
@@ -44,6 +44,7 @@
 			transform: translate(0, -50%) rotate(-40deg);
 		}
 		&._spoller-active {
+			border-radius: toRem(5) toRem(5) toRem(0) toRem(0);
 			&::before {
 				transform: translateX(-75%) rotate(-40deg);
 			}
@@ -51,44 +52,32 @@
 				transform: rotate(40deg);
 			}
 		}
-		/*
+	}
+	@media (max-width: $mobileSmall) {
+		padding: toRem(10) toRem(45) toRem(10) toRem(10);
 		._spoller-init & {
-			position: relative;
-			width: 100%;
-			text-align: left;
 			&::before,
 			&::after {
-				content: "";
-				position: absolute;
-				right: 0;
-				top: toRem(12);
-				height: toRem(1);
-				transition: all 0.3s ease 0s;
 				width: toRem(10);
-				background-color: #000;
-			}
-			&::before {
-				transform: rotate(40deg);
-				right: toRem(7);
-			}
-			&::after {
-				transform: rotate(-40deg);
 			}
 		}
-		&._spoller-active {
-			&::before {
-				transform: rotate(-40deg);
-			}
-			&::after {
-				transform: rotate(40deg);
-			}
-		}
-		*/
 	}
 }
 // Контент спойлера
 .spollers__body {
 	padding: toRem(20);
-	border-radius: toRem(5);
-	border: 1px solid #eee;
+	background-color: rgba($bgColor, 0.65);
+	border-left: toRem(1) solid rgba(#eee, 0.5);
+	border-right: toRem(1) solid rgba(#eee, 0.5);
+	border-bottom: toRem(1) solid rgba(#eee, 0.5);
+	border-radius: toRem(0) toRem(0) toRem(5) toRem(5);
+	p {
+		&:not(:last-child) {
+			margin-bottom: toRem(10);
+		}
+	}
+	@media (max-width: $mobileSmall) {
+		padding: toRem(10);
+	}
 }
+// ========================================================================================================================================================
