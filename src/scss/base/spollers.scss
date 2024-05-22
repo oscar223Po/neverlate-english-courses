@@ -8,6 +8,24 @@
 // Спойлер
 .spollers__item {
 	@include adaptiveValue("font-size", 18, 16);
+	@media (min-width: $mobile) {
+		opacity: 0;
+		transition:
+			transform 0.5s,
+			opacity 0.3s;
+		transform: translate(0, 30%);
+		._watcher-view & {
+			opacity: 1;
+			transform: translate(0, 0);
+			@for $i from 1 through 6 {
+				&:nth-child(#{$i}) {
+					$deleyStart: 0.5;
+					$deley: $i * 0.15 + $deleyStart;
+					transition-delay: #{$deley}s;
+				}
+			}
+		}
+	}
 }
 // Заголовок спойлера
 .spollers__title {
